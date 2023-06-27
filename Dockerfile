@@ -1,5 +1,5 @@
-Use a image with Maven and Java installed
-FROM maven:3.9.0
+# Use a image with Maven and Java installed
+FROM maven
 
 # Set the working directory inside the container
 WORKDIR /app
