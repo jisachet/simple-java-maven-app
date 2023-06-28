@@ -1,14 +1,15 @@
-# Use the base image with Maven and Java
-FROM maven:3.9.0-jdk-11-slim
+# Use a image with Maven and Java installed
+FROM maven
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project files to the container
-COPY . .
+# Copy the Maven project files
+COPY pom.xml .
+COPY src ./src
 
 # Build the Maven project
-RUN mvn clean install
+RUN mvn clean package
 
-# Set the command to run the application
-CMD ["java", "-cp", "target/classes", "com.mycompany.app.app"]
+# Set the entry point for the container
+CMD ["java", "-cp", "target/classes", "com.mycompany.app.App"]
