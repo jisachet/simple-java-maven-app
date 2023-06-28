@@ -12,4 +12,4 @@ COPY src ./src
 RUN mvn clean package
 
 # Set the entry point for the container
-CMD ["java", "-cp", "target/classes", "com.mycompany.app.App"]
+CMD ["java", "-cp", "target/classes", "com.mycompany.app.app"]
